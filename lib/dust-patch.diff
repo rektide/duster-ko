@@ -1,0 +1,21 @@
+diff --git a/dist/dust-core-0.3.0.js b/dist/dust-core-0.3.0.js
+index 04a0cd2..8dc188b 100644
+--- a/dist/dust-core-0.3.0.js
++++ b/dist/dust-core-0.3.0.js
+@@ -272,6 +272,7 @@ function Chunk(root, next, taps) {
+   this.flushable = false;
+   this.taps = taps;
+ }
++dust.chunk= Chunk
+ 
+ Chunk.prototype.write = function(data) {
+   var taps  = this.taps;
+@@ -323,7 +324,7 @@ Chunk.prototype.render = function(body, context) {
+ }
+ 
+ Chunk.prototype.reference = function(elem, context, auto, filters) {
+-  if (typeof elem === "function") {
++  if (typeof elem === "function" && elem.name != "observable") {
+     elem = elem(this, context, null, {auto: auto, filters: filters});
+     if (elem instanceof Chunk) {
+       return elem;
