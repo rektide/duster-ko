@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:st="http://socialtables.com">
+<head>
+<title>Duster Scratch Page</title>
+<script type="application/javascript" src="../lib/dust-0.3.0.js"/>
+<script type="application/javascript" src="../lib/knockout-2.1.0.js"/>
+<script type="application/javascript" src="../duster-ko.js"/>
+<script type="application/javascript" src="helloworld.dust.js" id="helloworld"/> 
+</head>
+<body>
+	<h1>hi!</h1>
+	<div data-bind="template: 'helloworld'"/>
+	<script type="application/javascript">
+		var viewModel= {
+			name: ko.observable("world"),
+			n: ko.observable(3)
+		}
+		console.log("go!")
+		ko.applyBindings(viewModel)
+	</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Hellloooooo, {name}! {#eval} 2 + {n} {/eval}  {~n}
+Of course, {name}! {#eval src="2 + 4"/}

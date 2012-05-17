@@ -1,0 +1,19 @@
+{
+	"name": "duster-ko",
+	"description": "dust.js templating engine in knockout.js",
+	"version": "1.0.0",
+	"main": "duster-ko.js",
+	"keywords": ["templating","knockout","dust","knockout.js","dust.js"],
+	"maintainers": [{
+		"name": "Matthew Fowle",
+		"email": "fowle@socialtables.com",
+		"web": "http://socialtables.com"
+	}],
+	"homepage": "http://socialtables.com",
+	"implements": ["CommonJS/Modules/1.0"],
+	"engines": { "node": ">=0.6.0" },
+	"dependencies": {
+		"dust": ">= 0.3.0"
+	},
+	"repository": {"type": "git", "url": "http://git.socialtables.com/duster-ko.git"}
+}
