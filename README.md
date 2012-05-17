@@ -2,7 +2,14 @@
 
 Duster-KO is a Dust.JS[1] implementation & hack-up of a Knockout[2] Template Engine[3]. There's not a lot of the well famed uber-schmancy asynchronous & parallel Dust.js super-powers going on; this is a pretty straight & simple means of using Dust.js templates.
 
-# Usage #
+### Table of Contents ###
+&nbsp;&nbsp;<a href="#usage">usage</a><br/>
+&nbsp;&nbsp;<a href="#implementation">implementation</a><br/>
+&nbsp;&nbsp;<a href="#why-the-dust-hack">why the dust hack</a><br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#the-source">the source</a><br/>
+&nbsp;&nbsp;<a href="#references">references</a>
+
+## Usage ##
 
 Is pretty straightforwards: 
 
@@ -12,7 +19,7 @@ Is pretty straightforwards:
 * ...
 * uh, you also neeed to hack Dust. `:(` (hack already done & provided)
 
-# Implementation #
+## Implementation ##
 
 Oh, pretty straightforwards, not much magic.
 
@@ -20,7 +27,7 @@ Oh, pretty straightforwards, not much magic.
 * Derive a utterly vanilla Knockout Template Engine that calls into Dust.
 * A small hack to Dust to keep it from trying to evaluate Observables like functional Dust tags. See: `:(`
 
-# Why the Dust hack #
+## Why the Dust hack ##
 
 :(
 
@@ -30,7 +37,7 @@ Dust expects any functional tags to accept a set of parameters (chunk, context).
 
 Instead, we just hack Dust to not evaluate Observers like it normally would, and handle the aftermath with a more stock standard helper-filter.
 
-## The Source ##
+### The Source ###
 
 These changes are done in whatever `dust*js` you're using.
 
@@ -47,7 +54,7 @@ Oh, also, we're manually invoking some Dust templates & *cough* eval'ing that. T
 
 Tis all! Checkout `lib/dust-patch.js` for a patch against unspecified Dust sources (for now, dust-core-0.3.0.js is the intended target).
 
-# References #
+## References ##
 
 1. http://akdubya.github.com/dustjs/
 2. http://knockoutjs.com/
