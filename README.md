@@ -30,6 +30,23 @@ Dust expects any functional tags to accept a set of parameters (chunk, context).
 
 Instead, we just hack Dust to not evaluate Observers like it normally would, and handle the aftermath with a more stock standard helper-filter.
 
+## The Source ##
+
+These changes are done in whatever `dust*js` you're using.
+
+Prime hackery:
+
+	Chunk.prototype.reference = function(elem, context, auto, filters) {
+	-  if (typeof elem === "function") {
+	+  if (typeof elem === "function" && elem.name != "observable") {
+	     elem = elem(this, context, null, {auto: auto, filters: filters});`
+
+Oh, also, we're manually invoking some Dust templates & *cough* eval'ing that. To manually invoke the template, we need to pass in a Dust `Chunk` object, which normally we wouldn't be exposed to, so:
+
+	+dust.chunk= Chunk
+
+Tis all! Checkout `lib/dust-patch.js` for a patch against unspecified Dust sources (for now, dust-core-0.3.0.js is the intended target).
+
 # References #
 
 1. http://akdubya.github.com/dustjs/
