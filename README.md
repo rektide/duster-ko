@@ -32,7 +32,7 @@ Instead, we just hack Dust to not evaluate Observers like it normally would, and
 
 # References #
 
-[1] http://akdubya.github.com/dustjs/
-[2] http://knockoutjs.com/
-[3] https://github.com/SteveSanderson/knockout/blob/master/src/templating/templateEngine.js
+1. http://akdubya.github.com/dustjs/
+2. http://knockoutjs.com/
+3. https://github.com/SteveSanderson/knockout/blob/master/src/templating/templateEngine.js
 
